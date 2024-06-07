@@ -9,15 +9,16 @@ import UIKit
 
 class HomeViewController: UIViewController, Storyboardable {
     
-    weak var mainCoordinator: MainCoordinator?
+    weak var homeChildCoordinator: HomeChildCoordinator?
+    var userName: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         navigationItem.hidesBackButton = true
+        self.title = userName != "" ? "Hey \(userName), Welcome" : ""
     }
     
     @IBAction func logoutAction() {
-        mainCoordinator?.navigateToSignIn_AfterLogout()
+        homeChildCoordinator?.logoutUser()
     }
 }

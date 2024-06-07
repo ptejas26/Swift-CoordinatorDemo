@@ -9,7 +9,9 @@ import Foundation
 import UIKit
 
 
-final class MainCoordinator: Coordinator {
+class MainCoordinator: Coordinator {
+    var childCoordinator: [Coordinator] = [Coordinator]()
+    
     var navigationController: UINavigationController?
     
     init(navigationController: UINavigationController? = nil) {
@@ -17,29 +19,18 @@ final class MainCoordinator: Coordinator {
     }
     
     func start() {
-        let signInVC = SignInViewController.instantiateStoryBoard()
-        signInVC.mainCoordinator = self 
-        navigationController?.pushViewController(signInVC, animated: false)
+        let signinCoordinator = SignInChildCoordinator(navigationController: self.navigationController)
+        self.childCoordinator.append(signinCoordinator)
+        signinCoordinator.mainCoordinator = self
+        signinCoordinator.start()
     }
     
-    func navigateToSignUpVC() {
-        let signUpVC = SignupViewController.instantiateStoryBoard()
-        navigationController?.pushViewController(signUpVC, animated: true)
-    }
-    
-    func navigateToForgotPasswordVC() {
-        let forgotVC = ForgotPasswordViewController.instantiateStoryBoard()
-        navigationController?.pushViewController(forgotVC, animated: true)
-    }
-    
-    func navigateToHomeVC() {
-        let homeVC = HomeViewController.instantiateStoryBoard()
-        homeVC.mainCoordinator = self
-        navigationController?.pushViewController(homeVC, animated: true)
-    }
-    
-    func navigateToSignIn_AfterLogout() {
-//        let signInVC = SignInViewController.instantiateStoryBoard()
-        navigationController?.popToRootViewController(animated: true)
+    func removeChildCoordinator(_ coordinator1: Coordinator) {
+        for (index, coord) in self.childCoordinator.enumerated() {
+            if coord === coordinator1 {
+                self.childCoordinator.remove(at: index)
+                break 
+            }
+        }
     }
 }

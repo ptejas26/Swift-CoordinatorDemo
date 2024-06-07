@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		962B49FC2C0E9DBE0041987B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962B49FB2C0E9DBE0041987B /* AppDelegate.swift */; };
 		962B49FE2C0E9DBE0041987B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962B49FD2C0E9DBE0041987B /* SceneDelegate.swift */; };
-		962B4A002C0E9DBE0041987B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962B49FF2C0E9DBE0041987B /* ViewController.swift */; };
 		962B4A032C0E9DBE0041987B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 962B4A012C0E9DBE0041987B /* Main.storyboard */; };
 		962B4A052C0E9DBF0041987B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 962B4A042C0E9DBF0041987B /* Assets.xcassets */; };
 		962B4A082C0E9DBF0041987B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 962B4A062C0E9DBF0041987B /* LaunchScreen.storyboard */; };
@@ -20,13 +19,13 @@
 		962B4A182C0EA2FE0041987B /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962B4A172C0EA2FE0041987B /* SignupViewController.swift */; };
 		962B4A1A2C0EA3200041987B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962B4A192C0EA3200041987B /* HomeViewController.swift */; };
 		962B4A1C2C0EA32C0041987B /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962B4A1B2C0EA32C0041987B /* ForgotPasswordViewController.swift */; };
+		9669333F2C0FD8F300E3012A /* HomeChildCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9669333E2C0FD8F300E3012A /* HomeChildCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		962B49F82C0E9DBE0041987B /* CoordinatorDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoordinatorDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		962B49FB2C0E9DBE0041987B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		962B49FD2C0E9DBE0041987B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		962B49FF2C0E9DBE0041987B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		962B4A022C0E9DBE0041987B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		962B4A042C0E9DBF0041987B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		962B4A072C0E9DBF0041987B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -38,6 +37,7 @@
 		962B4A172C0EA2FE0041987B /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SignupViewController.swift; path = Login/SignupViewController.swift; sourceTree = "<group>"; };
 		962B4A192C0EA3200041987B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = Login/HomeViewController.swift; sourceTree = "<group>"; };
 		962B4A1B2C0EA32C0041987B /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ForgotPasswordViewController.swift; path = Login/ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		9669333E2C0FD8F300E3012A /* HomeChildCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeChildCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +70,7 @@
 		962B49FA2C0E9DBE0041987B /* CoordinatorDemo */ = {
 			isa = PBXGroup;
 			children = (
+				9669333D2C0FD8DD00E3012A /* ChildCoordinators */,
 				962B4A132C0EA1AD0041987B /* Storyboardable.swift */,
 				962B4A1B2C0EA32C0041987B /* ForgotPasswordViewController.swift */,
 				962B4A152C0EA2D30041987B /* SignInViewController.swift */,
@@ -79,13 +80,20 @@
 				962B49FD2C0E9DBE0041987B /* SceneDelegate.swift */,
 				962B4A0F2C0EA1310041987B /* Coordinator.swift */,
 				962B4A112C0EA1650041987B /* MainCoordinator.swift */,
-				962B49FF2C0E9DBE0041987B /* ViewController.swift */,
 				962B4A012C0E9DBE0041987B /* Main.storyboard */,
 				962B4A042C0E9DBF0041987B /* Assets.xcassets */,
 				962B4A062C0E9DBF0041987B /* LaunchScreen.storyboard */,
 				962B4A092C0E9DBF0041987B /* Info.plist */,
 			);
 			path = CoordinatorDemo;
+			sourceTree = "<group>";
+		};
+		9669333D2C0FD8DD00E3012A /* ChildCoordinators */ = {
+			isa = PBXGroup;
+			children = (
+				9669333E2C0FD8F300E3012A /* HomeChildCoordinator.swift */,
+			);
+			path = ChildCoordinators;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -162,12 +170,12 @@
 				962B4A162C0EA2D30041987B /* SignInViewController.swift in Sources */,
 				962B4A102C0EA1310041987B /* Coordinator.swift in Sources */,
 				962B4A182C0EA2FE0041987B /* SignupViewController.swift in Sources */,
-				962B4A002C0E9DBE0041987B /* ViewController.swift in Sources */,
 				962B49FC2C0E9DBE0041987B /* AppDelegate.swift in Sources */,
 				962B4A1A2C0EA3200041987B /* HomeViewController.swift in Sources */,
 				962B4A1C2C0EA32C0041987B /* ForgotPasswordViewController.swift in Sources */,
 				962B4A122C0EA1650041987B /* MainCoordinator.swift in Sources */,
 				962B4A142C0EA1AD0041987B /* Storyboardable.swift in Sources */,
+				9669333F2C0FD8F300E3012A /* HomeChildCoordinator.swift in Sources */,
 				962B49FE2C0E9DBE0041987B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -91,6 +91,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="qde-Rc-BNS"/>
+                    <connections>
+                        <outlet property="userNameTextField" destination="Q00-oZ-BW9" id="R0I-hN-4Ed"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

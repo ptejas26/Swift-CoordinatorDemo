@@ -9,21 +9,22 @@ import UIKit
 
 class SignInViewController: UIViewController, Storyboardable {
     
-    weak var mainCoordinator: MainCoordinator?
+    weak var signInCoordinator: SignInChildCoordinator?
+    @IBOutlet weak var userNameTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
     @IBAction func signInAction() {
-        mainCoordinator?.navigateToHomeVC()
+        signInCoordinator?.navigateToHomeVC(userNameTextField.text ?? "")
     }
     
     @IBAction func signUpAction() {
-        mainCoordinator?.navigateToSignUpVC()
+        signInCoordinator?.navigateToSignUpVC()
     }
     
     @IBAction func forgotPasswordAction() {
-        mainCoordinator?.navigateToForgotPasswordVC()
+        signInCoordinator?.navigateToForgotPasswordVC()
     }
 }
